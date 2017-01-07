@@ -81,7 +81,7 @@
                                     <a href="{{ url('/profile') }}">
                                         个人主页
                                     </a>
-                                    <a href="{{ url('/password/reset') }}">
+                                    <a href="{{ url('/security') }}">
                                         安全设置
                                     </a>
                                     <a href="{{ url('/logout') }}"

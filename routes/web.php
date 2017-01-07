@@ -24,3 +24,9 @@ Route::get('chart/{chart_id}','Chart\ShowChartController@index');
 Route::get('/category','CategoryController@index');
 
 Route::get('/profile','ProfileController@index');
+
+Route::get('/security','Auth\LoginedResetPassController@index');
+Route::post('/security','Auth\LoginedResetPassController@resetPassword');
+
+
+
