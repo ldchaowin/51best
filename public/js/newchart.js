@@ -1,5 +1,5 @@
 /**
- * Created by ldc on 2016/9/27.
+ * 提交事件
  */
 
 $('#releaseChart').click(function () {
@@ -47,8 +47,23 @@ $('#releaseChart').click(function () {
      });
 
 
+});
 
 
+/**
+ *添加事件
+ */
 
+$('#addElement').click(function () {
+    //先复制添加元素
+    var totleNum = $(".element").size();
+    var element = $('.element:last').html();
+    element = "<div class='jumbotron element'>" + element + "</div>";
+    $('.elementList').append(element);
+
+    //再将序号修改成最新的
+    var elementDom = $('.element:last');
+    elementDom.find('span').html(totleNum+1);
 
 });
+

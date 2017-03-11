@@ -26,4 +26,9 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+
+    public function charts(){
+        return $this->belongsToMany('App\Chart','likes','user_id','chart_id');
+    }
 }

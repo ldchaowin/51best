@@ -7,13 +7,22 @@
 <div class="container">
    <div class="well well-sm">
       <h3>{{$chart->name}}</h3>
+      <span id="chart_id" style="display: none"> {{$chart->id}}</span>
       <div class="inline-block">
-         由{{$chart_owner->name}}创建
+         榜主:{{$chart_owner->name}}
 
          <!-- Go to www.addthis.com/dashboard to customize your tools -->
          <div style="float:right">
-            <span>添加元素</span>
-            <span>收藏榜单</span>
+
+         @if(  $isLiked == false )
+               <button  id="like" type="button" class="btn btn-primary btn-xs like">收藏</button>
+         @else
+               <button  id="like" type="button" class="btn btn-primary btn-xs like">已收藏</button>
+
+         @endif
+               <button class="btn btn-default btn-xs">添加元素</button>
+
+
          </div>
       </div>
       <hr>
@@ -21,6 +30,7 @@
          {{$chart->introduction}}
       </p>
    </div>
+
 
    @for($i = 0 ; $i != count($items); $i++)
       <div class="well well-sm">
@@ -31,10 +41,13 @@
 
 
 
-
-
-
 </div>
+
+
+
+@push('scripts')
+<script src="/js/showChart.js"></script>
+@endpush
 
 
 @endsection

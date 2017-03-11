@@ -1,3 +1,10 @@
+<?php
+
+Session::set('backUrl', URL::previous());
+?>
+
+
+
 @extends('layouts.app')
 
 @section('content')

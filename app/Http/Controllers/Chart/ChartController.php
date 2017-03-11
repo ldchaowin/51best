@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Chart;
 
 use App\Chart;
 use App\Item;
+use App\Like;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 
 
@@ -42,6 +44,9 @@ class ChartController extends Controller
         return view('chart/new_chart');
     }
 
+    /**
+     * 创建新表单
+    */
 
     public function postNewChart(Request $request){
         //新建并保存榜单
@@ -81,4 +86,9 @@ class ChartController extends Controller
 
 
     }
+
+
+
+
 }
+

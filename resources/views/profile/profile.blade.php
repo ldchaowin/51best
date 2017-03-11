@@ -17,7 +17,7 @@
 
     <!-- Tab panes -->
     <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="home">我的榜单</div>
+        <div role="tabpanel" class="tab-pane active" id="home">我的按按榜单</div>
         <div role="tabpanel" class="tab-pane" id="profile">我的元素</div>
         <div role="tabpanel" class="tab-pane" id="messages">收藏的元素</div>
 

@@ -23,8 +23,11 @@
         </div>
 
 
+        <div class="elementList">
+
         @for( $i = 0; $i != 3; $i++)
-            <div class="jumbotron">
+
+            <div class="jumbotron element">
                 <div class="item">
                     <div class="form-group">
                         <div class="input-group input-group">
@@ -38,10 +41,15 @@
                     </div>
                 </div>
             </div>
+
         @endfor
 
+        </div>
 
-        <button class="btn btn-success btn-block" type="submit" id="releaseChart">发布榜单</button>
+        <div class="col-md-12 text-center">
+            <button type="button" class="btn btn-default"  id="addElement">添加元素</button>
+            <button class="btn btn-success " type="submit" id="releaseChart">发布榜单</button>
+        </div>
 
         <br>
 
