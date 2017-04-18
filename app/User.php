@@ -9,6 +9,7 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+
     /**
      * The attributes that are mass assignable.
      *
@@ -28,7 +29,12 @@ class User extends Authenticatable
     ];
 
 
-    public function charts(){
+
+    public function likeCharts(){
+
         return $this->belongsToMany('App\Chart','likes','user_id','chart_id');
     }
+
+
+
 }

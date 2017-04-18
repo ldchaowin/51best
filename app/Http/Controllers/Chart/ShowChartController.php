@@ -37,8 +37,6 @@ class ShowChartController extends Controller
     }
 
 
-
-
     /**
      * 是否已收藏
      */
@@ -97,5 +95,52 @@ class ShowChartController extends Controller
 
 
     }
+
+    /**
+     * 展示添加元素页面
+    */
+
+    public function addItemShow($chart_id){
+
+            $chart = Chart::find($chart_id);
+            return view('chart/addItem')
+                ->with(compact('chart'));
+    }
+
+
+
+    /**
+     * 添加元素
+    */
+    public function  addItem(Request $request,$chart_id){
+        $newItem = new Item;
+        $newItem->name = $request->name;
+        $newItem->chart_id =$chart_id;
+        $newItem->user_id = Auth::id();
+        $newItem->introduction = $request->intro;
+        $newItem->ranking = Item::where('chart_id',$chart_id)->count() + 1;
+        $newItem->agreed_num = 0;
+        $newItem->comment_num = 0;
+
+        $newItem->save();
+
+        return response()->json([
+            'url'=>'/chart/'.$chart_id,
+        ]);
+    }
+
+    /**
+     * 显示元素详情
+    */
+    public function itemDetail($chart_id, $item_id){
+        $chart = Chart::find($chart_id);
+        $item = Item::find($item_id);
+
+        return view('chart/item')
+            ->with(compact('chart'))
+            ->with(compact('item'));
+    }
+
+
 
 }

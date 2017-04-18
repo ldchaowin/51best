@@ -3,25 +3,14 @@
 @section('content')
 <div class="container ">
     <div class="headimage">
-        <img  class="center-block img-circle img-head"src="/images/default.jpeg" alt="头像" >
+        <img  class="center-block img-circle img-head"src="/images/default.png" alt="头像" >
     </div>
-    <p class="text-center">ldchao</p>
-    <p class="text-center">ldchao is a good people.</p>
+    <p class="text-center">{{ Auth::user()->name }}</p>
+    <hr>
 
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs nav-justified" role="tablist">
-        <li role="presentation" class="active"><a href="#home" role="tab" data-toggle="tab">我的榜单</a></li>
-        <li role="presentation"><a href="#profile" role="tab" data-toggle="tab">我的元素</a></li>
-        <li role="presentation"><a href="#messages" role="tab" data-toggle="tab">收藏的榜单</a></li>
-    </ul>
-
-    <!-- Tab panes -->
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="home">我的按按榜单</div>
-        <div role="tabpanel" class="tab-pane" id="profile">我的元素</div>
-        <div role="tabpanel" class="tab-pane" id="messages">收藏的元素</div>
-
-    </div>
+    <a href="/profile/myChart" class="btn btn-default btn-lg btn-block">我的榜单</a>
+    <a href="/profile/myItem" class="btn btn-default btn-lg btn-block">我的元素</a>
+    <a href="/profile/myLike" class="btn btn-default btn-lg btn-block">收藏的榜单</a>
 
 </div>
 

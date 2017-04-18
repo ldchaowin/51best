@@ -5,9 +5,6 @@
 
 $('.like').click(function () {
 
-
-
-
     var chart_id = $('#chart_id').html();
 
     var chart = new Object();
@@ -28,7 +25,6 @@ $('.like').click(function () {
 
             $('#like').html('已收藏');
         }else{
-
             $('#like').html('收藏');
         }
 
@@ -41,7 +37,13 @@ $('.like').click(function () {
 
      });
 
+});
 
 
 
+//添加元素
+
+$('#addElement').click(function () {
+   var addElement = window.location.pathname+'/addItem';
+   window.location = addElement;
 });

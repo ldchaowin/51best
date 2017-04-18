@@ -17,8 +17,8 @@ $('#releaseChart').click(function () {
         item.intro = $(this).find("textarea[name='itemIntro']").val();
         item.ranking = $(this).find(".ch_span").text();
         items.push(item);
-
     });
+
     chart.item_num = items.length;
     chart.items = items;
 
@@ -28,7 +28,6 @@ $('#releaseChart').click(function () {
         }
     });
 
-
     chart.user_id = $('meta[name="ch_auth_id"]').attr('content');
 
      $.ajax({
@@ -36,13 +35,11 @@ $('#releaseChart').click(function () {
      type:'post',
      data: chart,
      dataType:'json',
-
      success:function (response) {
         window.location.href=response.url;
      },
      error:function () {
-
-     alert('出错啦~');
+        alert('出错啦~');
      }
      });
 

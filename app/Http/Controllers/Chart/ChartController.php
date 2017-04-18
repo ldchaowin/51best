@@ -50,7 +50,9 @@ class ChartController extends Controller
 
     public function postNewChart(Request $request){
         //新建并保存榜单
+
         $chart = new Chart;
+
         $chart->name = $request->name;
         $chart->user_id = $request->user_id;
         $chart->introduction = $request->intro;
@@ -60,9 +62,7 @@ class ChartController extends Controller
 
         $chart->save();
 
-
         //找到这个榜单插入元素
-
 
         $items = $request->items;
 
@@ -70,6 +70,7 @@ class ChartController extends Controller
             $newItem = new Item;
 
             $newItem->chart_id = $chart->id;
+            $newItem->user_id=$chart->user_id;
             $newItem->name = $item['name'];
             $newItem->introduction = $item['intro'];
             $newItem->ranking = $item['ranking'];
@@ -77,7 +78,6 @@ class ChartController extends Controller
             $newItem->comment_num = 0;
 
             $newItem->save();
-
         }
 
         return response()->json([

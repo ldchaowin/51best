@@ -20,7 +20,7 @@
                <button  id="like" type="button" class="btn btn-primary btn-xs like">已收藏</button>
 
          @endif
-               <button class="btn btn-default btn-xs">添加元素</button>
+               <button id="addElement" class="btn btn-default btn-xs">添加元素</button>
 
 
          </div>
@@ -34,7 +34,7 @@
 
    @for($i = 0 ; $i != count($items); $i++)
       <div class="well well-sm">
-         {{$i+1}} {{$items[$i]->name}}
+         <a href="{{ URL::to('chart/'.$chart->id.'/'.$items[$i]->id) }}">{{$i+1}} {{$items[$i]->name}}</a>
          <p>{{$items[$i]->introduction}}</p>
       </div>
    @endfor
@@ -48,6 +48,8 @@
 @push('scripts')
 <script src="/js/showChart.js"></script>
 @endpush
+
+
 
 
 @endsection
